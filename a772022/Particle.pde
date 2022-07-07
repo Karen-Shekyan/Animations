@@ -40,7 +40,15 @@ public class Particle {
         ellipse(this.pos.x, this.pos.y, 5, 5);
       }
       pos.add(vel);
-      vel.add(PVector.mult(GRAVITY,0.2));
+      vel.add(PVector.mult(GRAVITY, 0.2));
+      life--;
+      break;
+      
+    case -1:
+      fill(color(97*life/maxLife, 232*life/maxLife, 151*life/maxLife));
+      ellipse(pos.x, pos.y, 5, 5);
+      pos.add(vel);
+      vel.add(PVector.mult(GRAVITY, 0.05));
       life--;
       break;
     }

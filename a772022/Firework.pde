@@ -32,6 +32,19 @@ public class Firework {
         offset.mult(0.07);
         particles.add(new Particle(type, newpos, offset, (int)(Math.random()*15+50), this, color(242, 223, 10)));
       }
+    } else if (type == -1) {
+      //particles.add(new Particle(type, pos, new PVector(0,0), 500, this, color(255)));
+      
+      int n = (int)(Math.random()*7+10);
+      for (int i = 0; i < n; i++) {
+        PVector offset = PVector.random2D();
+        offset.mult((float)(Math.random()*10));
+        PVector newpos = PVector.add(pos, offset);
+
+        //offset.normalize();
+        offset.mult(0.005);
+        particles.add(new Particle(type, newpos, offset, 500, this, color(255)));
+      }
     }
   }
 
